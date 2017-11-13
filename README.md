@@ -1,2 +1,2 @@
 # net-magazine
-Code samples for Net magazine tutorials
+This repository hosts accompanying code for tutorials published in Net magazine.
