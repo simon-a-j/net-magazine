@@ -1,0 +1,67 @@
+body {
+  width: 400px;
+  margin: auto;
+}
+
+button {
+  display: inline-block;
+  width: 51%;
+  font-size: large;
+  font-family: sans-serif;
+  line-height: 1.8;
+  background-color: rgb(100,150,225);
+  border-radius: 0;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  margin: 5px;
+  background-color: rgb(200,200,200);
+  text-align: center;
+  font-family: sans-serif;
+  font-size: x-large;
+}
+
+.computer-cell {
+  background-color: rgb(200,0,0);
+}
+
+.player-cell {
+  background-color: rgb(0,200,0);
+}
+
+.online {
+  color: rgb(0,150,0);
+}
+
+.offline {
+  color: rgb(150,0,0);
+}
+
+.connection-symbol {
+  width: 14px;
+  margin-right: 4px;
+}
+
+#content {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: rgb(230,230,230);
+  margin-top: 20%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  box-shadow: 5px 5px rgba(0,0,0,0.5);
+}
+
+#game-container
+{
+  padding: 24px;
+  display: inline-block;
+  margin: auto;
+}
+
+#victory-status {
+  height: 48px;
+  font-size: large;
+}

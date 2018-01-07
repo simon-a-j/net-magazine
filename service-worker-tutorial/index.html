@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Noughts and Crosses</title>
+    <link rel="stylesheet" type="text/css" href="game.css">
+    <link id="template-import" rel="import" href="template.html">
+	</head>
+
+	<body>
+		<div id="content">
+      <header>
+        <h1>Noughts and Crosses</h1>
+      </header>
+      <div id="connection-status">
+      </div>
+      <div id="game-container">
+        <table id="game">
+        </table>
+      </div>
+      <div id="controls">
+        <div id="victory-status"></div>
+        <button onclick="javascript:reset();">Reset</button>
+      </div>
+		</div>
+
+    <script src="game.js"></script>
+    <script src="site.js"></script>
+
+	</body>
+</html>
