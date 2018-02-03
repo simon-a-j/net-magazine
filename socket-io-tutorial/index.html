@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bicoin Real Time Price</title>
+
+    <!-- Import the socket.io client side library which will be served on our http server -->
+    <script src='/socket.io/socket.io.js'></script>
+
+    <script>
+      var socket;
+
+      // Open a socket connection with the server using the client library io object.
+      function connectSocket() {
+        console.log('Opening socket connection.');
+        socket = io.connect();
+
+        // Define behaviour upon receiving data from the server.
+        // We use this to update the price element on our page.
+        socket.on('stream', function(data){
+          console.log('Received message: ' + data.price);
+          document.getElementById('price').innerHTML = '&#163;' + data.price.toLocaleString();
+        });
+      }
+    </script>
+
+    <style>
+      #tracker {
+        margin: auto;
+        margin-top: 31vh;
+        width: 50%;
+        padding: 10px;
+        padding-bottom: 20px;
+        text-align: center;
+        background-color: #D6CFCB;
+        font-family: sans-serif;
+        color: #706677;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      #price {
+        font-size: xx-large;
+        color: #2A4494;
+      }
+
+      #btn {
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #CCB7AE;
+        font-size: large;
+        outline: none;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tracker">
+      <h1>Bitcoin Price Tracker</h1>
+      <button id="btn" onclick='connectSocket()'>Connect</button>
+      <p>The latest buy price of bitcoin is: </p>
+      <div id='price'>-</div>
+    </div>
+  </body>
+</html>
